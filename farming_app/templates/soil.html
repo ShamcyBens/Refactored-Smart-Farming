@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="text-align: center; margin-top: 50px;">
+    <h2 style="color: #336633;">Soil Form</h2>
+    <h3>Get Informed on the type of soil in your farm</h3>
+    <p style="color: black;">Want to learn more about farming? <a href="{% url 'register' %}" style="color: green; text-decoration: none; font-weight: bold;">Click here</a> to join!</p>
+
+    <form method="post" enctype="multipart/form-data" style="max-width: 500px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+      {% csrf_token %}
+      
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="name">Farm Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+      </div>
+
+      <!-- Previous Fields -->
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="soil_quality">Soil Quality:</label>
+        <input type="text" class="form-control" id="soil_quality" name="soil_quality" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="pest_control">Pest Control:</label>
+        <input type="text" class="form-control" id="pest_control" name="pest_control" required>
+      </div>
+      <!-- End of Previous Fields -->
+
+      <!-- Soil Fields -->
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="soil_name">Soil Name:</label>
+        <input type="text" class="form-control" id="soil_name" name="soil_name" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="soil_description">Soil Description:</label>
+        <input type="text" class="form-control" id="soil_description" name="soil_description" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="texture">Texture:</label>
+        <input type="text" class="form-control" id="texture" name="texture" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="pH_level">pH Level:</label>
+        <input type="number" class="form-control" id="pH_level" name="pH_level" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="organic_matter">Organic Matter:</label>
+        <input type="number" class="form-control" id="organic_matter" name="organic_matter" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="moisture_retention">Moisture Retention:</label>
+        <input type="number" class="form-control" id="moisture_retention" name="moisture_retention" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="drainage_capacity">Drainage Capacity:</label>
+        <input type="number" class="form-control" id="drainage_capacity" name="drainage_capacity" required>
+      </div>
+      <!-- End of Soil Fields -->
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="document">Document:</label>
+        <input type="file" class="form-control-file" id="document" name="document" accept=".pdf, .doc, .docx">
+      </div>
+
+      <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #336633; color: #fff; border: none; width: 150px; height: 50px; padding: 10px 20px; font-size: 18px;">Submit</button>
+    </form>
+  </div>
+{% endblock %}

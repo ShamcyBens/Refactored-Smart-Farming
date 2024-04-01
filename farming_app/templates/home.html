@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Farming</title>
+    <style>
+        body {
+                   font-family: 'Arial', sans-serif;
+                   margin: 0;
+                   min-height: 100vh;
+                   display: flex;
+                   flex-direction: column;
+                   padding: 0;
+                   box-sizing: border-box;
+                   background-color: #ffffff;
+                   color: #333;
+                   position: relative;
+                   font-size: 16px;
+               }
+       
+               nav {
+                   background-color: #336633;
+                   padding: 15px;
+                   text-align: center;
+                   display: flex;
+                   justify-content: center;
+               }
+       
+               nav a {
+                   color: white;
+                   text-decoration: none;
+                   padding: 10px;
+                   margin: 0 10px;
+                   border-radius: 5px;
+                   transition: background-color 0.3s, color 0.3s;
+               }
+       
+               nav a:hover {
+                   background-color: #457b4a;
+                   color: orange;
+               }
+       
+               .landing {
+                   text-align: center;
+                   padding: 50px;
+                   background-image: url('https://cdn.wikifarmer.com/wp-content/uploads/2022/06/Wheat-Soil-Preparation-Seeding-Requirements.jpg');
+                   color: white;
+               }
+       
+               .cards-container {
+                   display: flex;
+                   justify-content: space-around;
+                   flex-wrap: wrap;
+                   padding: 20px;
+               }
+       
+               .card {
+                   width: 250px;
+                   background-color: #ffffff;
+                   border-radius: 8px;
+                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                   margin: 15px;
+                   padding: 20px;
+                   text-align: center;
+               }
+       
+               .card img {
+                   width: 80px;
+                   height: 80px;
+                   border-radius: 50%;
+                   object-fit: cover;
+                   margin-bottom: 15px;
+               }
+       
+               .card h3, .card p {
+                   color: #333;
+               }
+       
+               h4 {
+                   color: white;
+               }
+       
+               .card p {
+                   font-size: 14px;
+                   margin-top: 10px;
+               }
+       
+               ul {
+                   list-style: none;
+                   padding: 0;
+               }
+       
+               li {
+                   margin-bottom: 5px;
+               }
+       
+               a {
+                   text-decoration: none;
+                   color: white;
+                   display: block;
+                   margin-bottom: 5px;
+               }
+       
+               p {
+                   color: whitesmoke;
+               }
+       
+               .about-section {
+                   display: flex;
+                   flex-wrap: wrap;
+                   justify-content: space-around;
+                   align-items: center;
+                   padding: 50px;
+                   background-color: rgb(20, 54, 41);
+               }
+       
+               .about-image {
+                   flex: 1;
+                   max-width: 400px;
+               }
+       
+               .about-caption {
+                   flex: 1;
+                   max-width: 600px;
+                   padding: 20px;
+                   text-align: left;
+               }
+       
+               footer {
+                   display: flex;
+                   justify-content: space-between;
+                   padding: 20px;
+                   background-color: #336633;
+               }
+       
+               footer div {
+                   flex: 1;
+                   margin-right: 20px;
+               }
+           </style>
+</head>
+<body>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <a href="{% url 'register' %}">Register</a>
+        <a href="{% url 'login' %}">Login</a>
+    </nav>
+
+    <div class="landing">
+        <h2>Welcome to Our Website</h2>
+        <p>Here are some of the questions we will answer</p>
+        <p>1. What is the right time to plant crops?</p>
+        <p>2. What type of crops should I plant here?</p>
+        <p>3. What fertilizers to use?</p>
+        <p>4. Which disease do my crops have?</p>
+    </div>
+
+    
+    <div class="cards-container">
+        <!-- Card 1 -->
+        <a href="{% url 'crop_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/2165688/pexels-photo-2165688.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>CROP</h3>
+            <p>Recommend Which type of Crops to be cultivated in a specific location</p>
+        </a>
+
+        <!-- Card 2 -->
+        <a href="{% url 'fertilizer_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/164504/pexels-photo-164504.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>FERTILIZER</h3>
+            <p>Recommend about the type of fertilizer best suited for a certain crop</p>
+        </a>
+
+        <!-- Card 3 -->
+        <a href="{% url 'farm_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/2252584/pexels-photo-2252584.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>FARM</h3>
+            <p>Predict the name of the crop disease and how to prevent it </p>
+        </a>
+    </div>
+
+    <div class="cards-container">
+        <!-- Card 4 (adjust URLs accordingly) -->
+        <a href="{% url 'harvest_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/2132250/pexels-photo-2132250.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>HARVEST</h3>
+            <p>Recommend farmers which area to grow their crops depending on the temperature</p>
+        </a>
+
+        <!-- Card 5 (adjust URLs accordingly) -->
+        <a href="{% url 'soil_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/2135677/pexels-photo-2135677.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>SOIL</h3>
+            <p>Input your farm details to help us advice on the type of crops to grow</p>
+        </a>
+
+        <!-- Card 6 (adjust URLs accordingly) -->
+        <a href="{% url 'daily_update_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/96715/pexels-photo-96715.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>DAILY UPDATE</h3>
+            <p>Input your farm's daily update here to help us advice on the type of crops to grow</p>
+        </a>
+    </div>
+
+    <div class="card">
+        <!-- Card 7 (adjust URLs accordingly) -->
+        <a href="{% url 'weather_data_form' %}" class="card">
+            <img src="https://images.pexels.com/photos/96715/pexels-photo-96715.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Avatar">
+            <h3>WEATHER</h3>
+            <p>Get informed on the weather and the season to plant your crops.</p>
+        </a>
+    </div>
+
+    <footer>
+        <div>
+            <h4>Company</h4>
+            <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+        </div>
+        <div>
+            <h4>Services</h4>
+            <ul>
+                <li>Service 1</li>
+                <li>Servcie 2</li>
+                <li>Service 3</li>
+            </ul>
+        </div>
+        <div>
+            <h4>Contact</h4>
+            <p>Company Name</p>
+            <!-- Include social media links here -->
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+</body>
+</html>

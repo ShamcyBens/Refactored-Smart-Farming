@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Smart Farming{% endblock %}</title>
+	<style>
+		body {
+				   font-family: 'Arial', sans-serif;
+				   margin: 0;
+				   min-height: 100vh;
+				   display: flex;
+				   flex-direction: column;
+				   padding: 0;
+				   box-sizing: border-box;
+				   background-color: #ffffff;
+				   color: #333;
+				   position: relative;
+				   font-size: 16px;
+			   }
+	   
+			   nav {
+				   background-color: #336633;
+				   padding: 15px;
+				   text-align: center;
+				   display: flex;
+				   justify-content: center;
+			   }
+	   
+			   nav a {
+				   color: white;
+				   text-decoration: none;
+				   padding: 10px;
+				   margin: 0 10px;
+				   border-radius: 5px;
+				   transition: background-color 0.3s, color 0.3s;
+			   }
+	   
+			   nav a:hover {
+				   background-color: #457b4a;
+				   color: orange;
+			   }
+	   
+			   .landing {
+				   text-align: center;
+				   padding: 50px;
+				   background-image: url('https://cdn.wikifarmer.com/wp-content/uploads/2022/06/Wheat-Soil-Preparation-Seeding-Requirements.jpg');
+				   color: white;
+			   }
+	   
+			   .cards-container {
+				   display: flex;
+				   justify-content: space-around;
+				   flex-wrap: wrap;
+				   padding: 20px;
+			   }
+	   
+			   .card {
+				   width: 250px;
+				   background-color: #ffffff;
+				   border-radius: 8px;
+				   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+				   margin: 15px;
+				   padding: 20px;
+				   text-align: center;
+			   }
+	   
+			   .card img {
+				   width: 80px;
+				   height: 80px;
+				   border-radius: 50%;
+				   object-fit: cover;
+				   margin-bottom: 15px;
+			   }
+	   
+			   .card h3, .card p {
+				   color: #333;
+			   }
+	   
+			   h4 {
+				   color: white;
+			   }
+	   
+			   .card p {
+				   font-size: 14px;
+				   margin-top: 10px;
+			   }
+	   
+			   ul {
+				   list-style: none;
+				   padding: 0;
+			   }
+	   
+			   li {
+				   margin-bottom: 5px;
+			   }
+	   
+			   a {
+				   text-decoration: none;
+				   color: white;
+				   display: block;
+				   margin-bottom: 5px;
+			   }
+	   
+			   p {
+				   color: whitesmoke;
+			   }
+	   
+			   .about-section {
+				   display: flex;
+				   flex-wrap: wrap;
+				   justify-content: space-around;
+				   align-items: center;
+				   padding: 50px;
+				   background-color: rgb(20, 54, 41);
+			   }
+	   
+			   .about-image {
+				   flex: 1;
+				   max-width: 400px;
+			   }
+	   
+			   .about-caption {
+				   flex: 1;
+				   max-width: 600px;
+				   padding: 20px;
+				   text-align: left;
+			   }
+	   
+			   footer {
+				   display: flex;
+				   justify-content: space-between;
+				   padding: 20px;
+				   background-color: #336633;
+			   }
+	   
+			   footer div {
+				   flex: 1;
+				   margin-right: 20px;
+			   }
+		   </style>
+</head>
+<body>
+
+<nav>
+    <a href="{% url  'home' %}">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+    <a href="{% url 'register' %}">Register</a>
+    <a href="{% url 'login' %}">Login</a>
+</nav>
+
+{% block content %}{% endblock %}
+
+<footer>
+    <div>
+        <h4>Smart Farming</h4>
+        <p>Praesent sed lobortis mi. Suspendisse vel placerat ligula. Vivamus ac sem lacus. Ut vehicula rhoncus elementum. Etiam quis tristique lectus. Aliquam in arcu eget velit pulvinar dictum vel in justo.</p>
+    </div>
+    <div>
+        <h4>Services</h4>
+        <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+        </ul>
+    </div>
+    <div>
+        <h4>Contact</h4>
+        <p>Smart Farming</p>
+        <!-- Include social media links here -->
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
+        <a href="#">Instagram</a>
+    </div>
+</footer>
+
+</body>
+</html>

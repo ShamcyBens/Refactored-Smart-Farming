@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .login-left {
+        padding: 40px;
+        border-radius: 8px;
+        background-color: #fff;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card {
+        border: none;
+        border-radius: 10px;
+    }
+
+    .login-header h3 {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+        color: #666;
+    }
+
+    .form-control {
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 16px;
+        color: #333;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-focus .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border: none;
+        border-radius: 4px;
+        font-size: 18px;
+        padding: 12px 20px;
+        color: #fff;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .forgot-link {
+        font-size: 14px;
+        color: #007bff;
+    }
+
+    .login-or {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+    .or-line {
+        border-top: 1px solid #ccc;
+        display: block;
+        height: 1px;
+        margin: 10px 0;
+    }
+</style>
+
+<!-- Page Content -->
+<div class="content">
+    <div class="row">
+        <div class="account-content">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12 col-lg-6 login-left">
+                    <form action="{% url 'register' %}" method="POST">
+                        {% csrf_token %}
+
+                        <div class="login-header">
+                            <h3 class="text-primary">Create an Account</h3>
+                            <p class="text-muted">Join our Farmers community.</p>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_first_name">First Name</label>
+                            {{ form.first_name }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_last_name">Last Name</label>
+                            {{ form.last_name }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_email">Email</label>
+                            {{ form.email }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_phone_number">Mobile Number</label>
+                            {{ form.phone_number }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_password">Password</label>
+                            {{ form.password }}
+                        </div>
+
+                        <div class="form-group">
+                            <label for="id_confirm_password">Confirm Password</label>
+                            {{ form.confirm_password }}
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-primary" type="submit">Sign Up</button>
+                        </div>
+                        <div class="login-or">
+                            <span class="or-line"></span>
+                            <span class="text-muted">Already have an account? <a class="forgot-link" href="{% url 'login' %}">Login</a></span>
+                        </div>
+                    </form>
+                    <!-- /Register Form -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Page Content -->
+
+{% endblock content %}

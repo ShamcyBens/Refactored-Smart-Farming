@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div style="text-align: center; margin-top: 50px;">
+    <h2 style="color: #336633;">Farm Form</h2>
+    <h3>Input your  farm details to help us advise on the type of crops to grow</h3>
+    
+    <!-- Link for farmers to learn more about farming -->
+    <p style="color: green;">Want to learn more about farming? <a href="{% url 'register' %}" style="color: black;">Click here</a> to join!</p>    
+    <form method="post" enctype="multipart/form-data" style="max-width: 500px; margin: 50px auto; padding: 30px; border: 1px solid #ddd; border-radius: 12px; box-shadow: 0 0 15px rgba(0,0,0,0.2);">
+      {% csrf_token %}
+      
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="location">Location:</label>
+        <input type="text" class="form-control" id="location" name="location" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="soil_quality">Soil Quality:</label>
+        <input type="text" class="form-control" id="soil_quality" name="soil_quality" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="pest_control">Pest Control:</label>
+        <input type="text" class="form-control" id="pest_control" name="pest_control" required>
+      </div>
+
+      <div class="form-group" style="margin-bottom: 50px;">
+        <label for="document">Document:</label>
+        <input type="file" class="form-control-file" id="document" name="document" accept=".pdf, .doc, .docx">
+      </div>
+
+      <button type="submit" class="btn btn-primary rounded-pill" style="background-color: #336633; color: #fff; border: none; width: 150px; height: 50px; padding: 10px 20px; font-size: 18px;">Submit</button>
+    </form>
+  </div>
+{% endblock %}
